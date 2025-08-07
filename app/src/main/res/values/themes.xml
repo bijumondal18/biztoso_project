@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BiztosoProject" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="backgroundColor">@color/background</item>
+        <item name="statusBarBackground">@color/background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/background</item>
+    </style>
+
+    <style name="Theme.BiztosoProject" parent="Base.Theme.BiztosoProject" />
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/outfit_semi_bold</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/_6sdp</item>
+    </style>
+
+    <style name="TopRoundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/_6sdp</item>
+        <item name="cornerSizeTopRight">@dimen/_6sdp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <style name="ExpandedAppBar" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@android:color/black</item> <!-- Or any visible color -->
+    </style>
+
+    <style name="CollapsedAppBar" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+</resources>

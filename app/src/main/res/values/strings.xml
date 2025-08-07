@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BiztosoProject</string>
+    <string name="text_select_language">Select Language</string>
+    <string name="text_select_language_desc">Choose Your Preferred Language for a Personalized Experience</string>
+    <string name="text_continue">Continue</string>
+</resources>
