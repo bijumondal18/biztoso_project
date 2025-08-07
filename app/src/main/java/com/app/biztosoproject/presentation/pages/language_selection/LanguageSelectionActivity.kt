@@ -12,6 +12,8 @@ import com.app.biztosoproject.R
 import com.app.biztosoproject.app.MainActivity
 import com.app.biztosoproject.core.api.Resource
 import com.app.biztosoproject.core.base.BaseActivity
+import com.app.biztosoproject.core.extensions.setSpringBounceClick
+import com.app.biztosoproject.core.utils.showDebugLog
 import com.app.biztosoproject.data.models.Language
 import com.app.biztosoproject.databinding.ActivityLanguageSelectionBinding
 import com.app.biztosoproject.databinding.ActivitySplashBinding
@@ -36,7 +38,8 @@ class LanguageSelectionActivity : BaseActivity() {
     }
 
     override fun initView() {
-        languageAdapter = LanguageListAdapter()
+        languageAdapter = LanguageListAdapter(binding.languageRecyclerview) { position ->
+        }
         languageViewModel = ViewModelProvider(this)[LanguageViewModel::class.java]
 
         configureLanguageRecyclerView()
@@ -51,6 +54,7 @@ class LanguageSelectionActivity : BaseActivity() {
                     binding.shimmer.startShimmer()
                     binding.languageRecyclerview.isVisible = false
                 }
+
                 is Resource.Success -> {
                     binding.shimmer.isVisible = false
                     binding.shimmer.stopShimmer()
@@ -71,8 +75,14 @@ class LanguageSelectionActivity : BaseActivity() {
     }
 
     override fun initListeners() {
-        binding.btnContinue.setOnClickListener {
-            goToMainActivity()
+        binding.btnContinue.setSpringBounceClick {
+            val selectedLanguage = languageAdapter.getSelectedLanguage()
+            if (selectedLanguage != null) {
+                showDebugLog("Selected language: ${selectedLanguage.languageName}")
+                goToMainActivity()
+            } else {
+                showDebugLog("Please select a language")
+            }
         }
 
     }
