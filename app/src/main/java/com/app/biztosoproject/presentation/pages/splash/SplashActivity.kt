@@ -10,6 +10,7 @@ import com.app.biztosoproject.app.MainActivity
 import com.app.biztosoproject.core.base.BaseActivity
 import com.app.biztosoproject.databinding.ActivitySplashBinding
 import com.app.biztosoproject.presentation.pages.language_selection.LanguageSelectionActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -17,6 +18,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
+@AndroidEntryPoint
 class SplashActivity : BaseActivity() {
 
     private lateinit var binding: ActivitySplashBinding

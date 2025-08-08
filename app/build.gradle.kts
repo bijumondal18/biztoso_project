@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
+    alias(libs.plugins.hilt.android) // Hilt plugin
 }
 
 android {
@@ -35,6 +37,12 @@ android {
     }
     viewBinding {
         enable = true
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force("com.squareup:javapoet:1.13.0")
     }
 }
 
@@ -80,4 +88,9 @@ dependencies {
 
     // RecyclerView Item Animation Dependency
     implementation("jp.wasabeef:recyclerview-animators:4.0.2")
+
+    // Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+//    kapt(libs.hilt.compiler)
 }
