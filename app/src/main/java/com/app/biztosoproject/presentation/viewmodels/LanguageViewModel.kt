@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.biztosoproject.core.api.Resource
+import com.app.biztosoproject.data.api.Resource
 import com.app.biztosoproject.core.utils.showDebugLog
 import com.app.biztosoproject.core.utils.showErrorLog
 import com.app.biztosoproject.data.models.Language

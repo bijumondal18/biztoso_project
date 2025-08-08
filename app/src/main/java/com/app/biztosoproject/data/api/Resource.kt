@@ -1,4 +1,4 @@
-package com.app.biztosoproject.core.api
+package com.app.biztosoproject.data.api
 
 sealed class Resource<T> {
     class Loading<T> : Resource<T>()

@@ -18,6 +18,9 @@
         android:theme="@style/Theme.BiztosoProject"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".presentation.pages.auth.AuthActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.pages.language_selection.LanguageSelectionActivity"
             android:exported="false" />
         <activity
@@ -33,7 +36,7 @@
         <activity
             android:name=".app.MainActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

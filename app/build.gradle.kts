@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
-    alias(libs.plugins.hilt.android) // Hilt plugin
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -40,11 +40,11 @@ android {
     }
 }
 
-configurations.all {
-    resolutionStrategy {
-        force("com.squareup:javapoet:1.13.0")
-    }
-}
+//configurations.all {
+//    resolutionStrategy {
+//        force("com.squareup:javapoet:1.13.0")
+//    }
+//}
 
 dependencies {
 
@@ -79,18 +79,29 @@ dependencies {
     // Gson Convertor Library
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    // ViewModel Dependency
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-
     // OkHttp Dependency
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     // RecyclerView Item Animation Dependency
     implementation("jp.wasabeef:recyclerview-animators:4.0.2")
 
-    // Hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-//    kapt(libs.hilt.compiler)
+    // ViewModel Dependency
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+
+    // Hilt core
+    val hiltVersion = "2.51" // REPLACE WITH LATEST STABLE HILT VERSION
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
+    kapt("com.google.dagger:hilt-compiler:$hiltVersion")
+
+
+    // Hilt Navigation Fragment (optional but useful)
+    implementation("androidx.hilt:hilt-navigation-fragment:1.1.0")
+
+    // Coroutines (optional for async)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+}
+
+kapt {
+    correctErrorTypes = true
 }
