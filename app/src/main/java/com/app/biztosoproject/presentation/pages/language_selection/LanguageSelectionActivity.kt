@@ -10,6 +10,7 @@ import com.app.biztosoproject.core.extensions.setSpringBounceClick
 import com.app.biztosoproject.core.utils.showDebugLog
 import com.app.biztosoproject.databinding.ActivityLanguageSelectionBinding
 import com.app.biztosoproject.presentation.adapters.LanguageListAdapter
+import com.app.biztosoproject.presentation.pages.auth.AuthActivity
 import com.app.biztosoproject.presentation.viewmodels.LanguageViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -74,7 +75,7 @@ class LanguageSelectionActivity : BaseActivity() {
             val selectedLanguage = languageAdapter.getSelectedLanguage()
             if (selectedLanguage != null) {
                 showDebugLog("Selected language: ${selectedLanguage.languageName}")
-                goToMainActivity()
+                goToAuthActivity()
             } else {
                 showDebugLog("Please select a language")
             }
@@ -99,6 +100,16 @@ class LanguageSelectionActivity : BaseActivity() {
             delay(500)
             withContext(Dispatchers.Main) {
                 goToActivity<MainActivity>(finishCurrent = true)
+            }
+        }
+    }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    private fun goToAuthActivity() {
+        GlobalScope.launch {
+            delay(500)
+            withContext(Dispatchers.Main) {
+                goToActivity<AuthActivity>(finishCurrent = true)
             }
         }
     }

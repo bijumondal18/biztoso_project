@@ -18,7 +18,7 @@
         android:fontFamily="@font/outfit_semi_bold"
         android:text="@string/text_select_language"
         android:textColor="@color/primaryText"
-        android:textSize="@dimen/_24ssp"
+        android:textSize="@dimen/_20ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
