@@ -22,4 +22,11 @@ class SessionManager @Inject constructor(
     fun clearToken() {
         prefs.edit().remove("access_token").apply()
     }
+
+    fun setLoggedIn(isLoggedIn: Boolean) {
+        prefs.edit().putBoolean("is_logged_in", isLoggedIn).apply()
+    }
+
+    fun isLoggedIn(): Boolean = prefs.getBoolean("is_logged_in", false)
+
 }

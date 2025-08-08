@@ -52,21 +52,21 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/til_email"
         android:layout_width="0dp"
         android:layout_height="@dimen/_44sdp"
         android:layout_marginTop="@dimen/_24sdp"
+        app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
         app:boxCornerRadiusBottomStart="@dimen/_8sdp"
         app:boxCornerRadiusTopEnd="@dimen/_8sdp"
         app:boxCornerRadiusTopStart="@dimen/_8sdp"
-        app:boxBackgroundMode="outline"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/til_email"
+            android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_email" />
@@ -77,23 +77,24 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/_44sdp"
         android:layout_marginTop="@dimen/_8sdp"
+        app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
         app:boxCornerRadiusBottomStart="@dimen/_8sdp"
         app:boxCornerRadiusTopEnd="@dimen/_8sdp"
         app:boxCornerRadiusTopStart="@dimen/_8sdp"
-        app:boxBackgroundMode="outline"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintEnd_toEndOf="@+id/til_email"
+        app:layout_constraintStart_toStartOf="@+id/til_email"
+        app:layout_constraintTop_toBottomOf="@+id/til_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_password" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginTop="@dimen/_28sdp"
@@ -105,6 +106,17 @@
         app:layout_constraintEnd_toEndOf="@+id/til_password"
         app:layout_constraintStart_toStartOf="@+id/til_password"
         app:layout_constraintTop_toBottomOf="@+id/text_forget_password" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toTopOf="@+id/btn_login" />
 
     <TextView
         android:id="@+id/text_forget_password"
@@ -123,14 +135,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
-        android:text="Signup"
         android:fontFamily="@font/outfit_semi_bold"
-        android:textSize="@dimen/_12ssp"
+        android:text="Signup"
         android:textColor="@color/primary"
-        app:layout_constraintEnd_toEndOf="@+id/button"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

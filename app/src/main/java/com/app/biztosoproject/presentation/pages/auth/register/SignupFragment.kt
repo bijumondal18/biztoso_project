@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import com.app.biztosoproject.R
 import com.app.biztosoproject.core.base.BaseFragment
 import com.app.biztosoproject.databinding.FragmentSignupBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class SignupFragment : BaseFragment<FragmentSignupBinding>() {
     override fun getViewBinding(
         inflater: LayoutInflater,
