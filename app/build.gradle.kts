@@ -51,15 +51,23 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.sdp.android)  // for dimensions
+
     implementation(libs.ssp.android)  // for text size
+
     implementation(libs.circleimageview) // circle image view
+
     implementation(libs.flexbox) // flexbox layout
-    implementation(libs.shimmer) // shimmer effect
-    implementation(libs.glide) // image loader
+
+    // Shimmer Loader Dependency
+    implementation(libs.shimmer)
+
+    //Image Loader Library
+    implementation(libs.glide)
     implementation(libs.androidx.fragment.ktx.v162)
 
     // Core Retrofit Library
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
     // Gson Convertor Library
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
@@ -67,9 +75,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
 
+    // OkHttp Dependency
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
-    implementation("com.facebook.shimmer:shimmer:0.5.0")
-
+    // RecyclerView Item Animation Dependency
     implementation("jp.wasabeef:recyclerview-animators:4.0.2")
 }
